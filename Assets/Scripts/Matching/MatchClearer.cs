@@ -23,18 +23,18 @@ public static class MatchClearer
         }
     }
 
-    public static int CalculateMatchScore(int matchLength, float cascadeMultiplier, int chainLevel)
+    public static int CalculateMatchScore(int matchLength, GameConfig config, int chainLevel)
     {
         int baseScore = matchLength switch
         {
-            3 => 100,
-            4 => 200,
-            _ => 500
+            3 => config.pointsMatch3,
+            4 => config.pointsMatch4,
+            _ => config.pointsMatch5
         };
 
         if (chainLevel > 0)
         {
-            baseScore = Mathf.RoundToInt(baseScore * Mathf.Pow(cascadeMultiplier, chainLevel));
+            baseScore = Mathf.RoundToInt(baseScore * Mathf.Pow(config.cascadeMultiplier, chainLevel));
         }
 
         return baseScore;

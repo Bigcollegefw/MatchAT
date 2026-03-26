@@ -70,7 +70,6 @@
     <Compile Include="Assets/Scripts/Scoring/ScoreManager.cs" />
     <Compile Include="Assets/Scripts/Grid/TileInputHandler.cs" />
     <Compile Include="Assets/Scripts/Configs/ScriptableTileConfig.cs" />
-    <Compile Include="Assets/Scripts/UI/ScoreDisplay.cs" />
     <Compile Include="Assets/Scripts/Matching/MatchDetector.cs" />
     <Compile Include="Assets/Scripts/Configs/GridConfig.cs" />
     <Compile Include="Assets/Scripts/Grid/GridManager.cs" />

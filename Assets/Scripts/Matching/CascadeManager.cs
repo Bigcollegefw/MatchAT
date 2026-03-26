@@ -22,7 +22,7 @@ public static class CascadeManager
             {
                 roundScore += MatchClearer.CalculateMatchScore(
                     match.matchLength,
-                    gameConfig.cascadeMultiplier,
+                    gameConfig,
                     chainLevel);
             }
             scoreManager.AddScore(roundScore);
@@ -84,6 +84,10 @@ public static class CascadeManager
                     tile.y = y;
                     tile.tileConfig = tileConfig;
                     tile.SetType(Random.Range(0, tileConfig.tileTypes.Length), tileConfig);
+
+                    var inputHandler = go.GetComponent<TileInputHandler>();
+                    if (inputHandler != null)
+                        inputHandler.tile = tile;
 
                     tiles[x, y] = tile;
 
