@@ -66,7 +66,7 @@ FLOW-05, FLOW-06, VISU-04
 
 | Phase | Status | Completed |
 |-------|--------|-----------|
-| Phase 1: Core Mechanics | Pending | — |
+| Phase 1: Core Mechanics | [x] Complete | 2026-03-26 |
 | Phase 2: Game Flow & UI | Pending | — |
 
 ---
