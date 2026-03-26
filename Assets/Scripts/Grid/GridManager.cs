@@ -48,7 +48,7 @@ public class GridManager : MonoBehaviour
         tiles[x, y] = tile;
     }
 
-    Vector3 GetTilePosition(int x, int y)
+    public Vector3 GetTilePosition(int x, int y)
     {
         float offsetX = -(gridConfig.gridWidth - 1) * (gridConfig.tileSize + gridConfig.tileSpacing) / 2f;
         float offsetY = -(gridConfig.gridHeight - 1) * (gridConfig.tileSize + gridConfig.tileSpacing) / 2f;
