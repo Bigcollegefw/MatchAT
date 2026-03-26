@@ -92,7 +92,7 @@ MonoBehaviour:
   x: 0
   y: 0
   tileTypeIndex: 0
-  image: {fileID: 0}
+  image: {fileID: 7039999292227991254}
   tileConfig: {fileID: 0}
 --- !u!114 &2927088419473950560
 MonoBehaviour:
@@ -107,4 +107,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 4734252446783033194}
-  gridManager: {fileID: 0}
