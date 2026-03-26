@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
     public bool HasWon { get; private set; }
 
     public GameConfig gameConfig;
-    public GameObject winScreen;
-    public GameObject loseScreen;
+    public WinScreen winScreen;
+    public LoseScreen loseScreen;
 
     void Awake()
     {
@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
         IsGameRunning = true;
         HasWon = false;
 
-        if (winScreen != null) winScreen.SetActive(false);
-        if (loseScreen != null) loseScreen.SetActive(false);
+        if (winScreen != null) winScreen.Hide();
+        if (loseScreen != null) loseScreen.Hide();
     }
 
     public void CheckWinCondition()
@@ -50,11 +50,11 @@ public class GameManager : MonoBehaviour
 
         if (won)
         {
-            if (winScreen != null) winScreen.SetActive(true);
+            if (winScreen != null) winScreen.Show();
         }
         else
         {
-            if (loseScreen != null) loseScreen.SetActive(true);
+            if (loseScreen != null) loseScreen.Show();
         }
     }
 }

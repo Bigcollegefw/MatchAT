@@ -362,8 +362,10 @@
 "Assets/Scripts/Matching/MatchClearer.cs"
 "Assets/Scripts/Matching/MatchDetector.cs"
 "Assets/Scripts/Scoring/ScoreManager.cs"
+"Assets/Scripts/UI/LoseScreen.cs"
 "Assets/Scripts/UI/ScoreDisplay.cs"
 "Assets/Scripts/UI/TimerDisplay.cs"
+"Assets/Scripts/UI/WinScreen.cs"
 -langversion:9.0
 /deterministic
 /optimize+
