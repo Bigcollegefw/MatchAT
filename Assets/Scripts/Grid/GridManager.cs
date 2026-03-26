@@ -153,8 +153,8 @@ public class GridManager : MonoBehaviour
                 yield return null;
             }
 
-            (tiles[a.x, a.y], tiles[b.x, b.y]) = (tiles[b.x, b.y], tiles[a.x, b.y]);
-            (a.x, a.y, b.x, b.y) = (b.y, b.x, b.x, b.y);
+            (tiles[a.x, a.y], tiles[b.x, b.y]) = (tiles[b.x, b.y], tiles[a.x, a.y]);
+            (a.x, a.y, b.x, b.y) = (b.x, b.y, a.x, a.y);
         }
 
         isProcessing = false;

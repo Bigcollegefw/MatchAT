@@ -35,7 +35,7 @@ public static class CascadeManager
 
             yield return new WaitForSeconds(0.2f);
 
-            FillEmptySpaces(tiles, gridConfig, tileConfig, gridManager);
+            FillEmptySpaces(tiles, gridConfig, tileConfig, gridManager, gridManager);
 
             yield return new WaitForSeconds(0.2f);
 
@@ -68,7 +68,7 @@ public static class CascadeManager
         }
     }
 
-    static void FillEmptySpaces(Tile[,] tiles, GridConfig gridConfig, ScriptableTileConfig tileConfig, GridManager gridManager)
+    static void FillEmptySpaces(Tile[,] tiles, GridConfig gridConfig, ScriptableTileConfig tileConfig, GridManager gridManager, MonoBehaviour caller)
     {
         for (int x = 0; x < gridConfig.gridWidth; x++)
         {
@@ -88,7 +88,7 @@ public static class CascadeManager
                     tiles[x, y] = tile;
 
                     Vector3 targetPos = gridManager.GetTilePosition(x, y);
-                    StartCoroutine(AnimateFall(go, targetPos));
+                    caller.StartCoroutine(AnimateFall(go, targetPos));
                 }
             }
         }
