@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager Instance { get; private set; }
+
     public ScriptableTileConfig tileConfig;
     public GridConfig gridConfig;
     public GameConfig gameConfig;
@@ -13,6 +15,14 @@ public class GridManager : MonoBehaviour
 
     private Tile[,] tiles;
     private bool isProcessing = false;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     void Start()
     {
@@ -44,6 +54,10 @@ public class GridManager : MonoBehaviour
         tile.y = y;
         tile.tileConfig = tileConfig;
         tile.SetType(Random.Range(0, tileConfig.tileTypes.Length), tileConfig);
+
+        var inputHandler = go.GetComponent<TileInputHandler>();
+        if (inputHandler != null)
+            inputHandler.tile = tile;
 
         tiles[x, y] = tile;
     }

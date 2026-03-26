@@ -31,16 +31,18 @@
 
 6. 再点击 **Add Component**
 7. 搜索 `Tile`（我们创建的脚本），点击添加
+   - 重要：Inspector 中 Tile 字段保持为空，运行时由 GridManager 自动填充
 
 8. 再点击 **Add Component**
 9. 搜索 `TileInputHandler`，点击添加
+   - 重要：Inspector 中 Tile 字段保持为空，运行时由 GridManager 自动填充
 
 完成！预制体应该看起来像这样：
 ```
 Tile (Prefab)
-├── Image (组件)
-├── Tile (组件)
-└── TileInputHandler (组件)
+├── Image (组件)  →  Color: 白色, Width: 100, Height: 100
+├── Tile (组件)   →  Tile 字段: 空（运行时填充）
+└── TileInputHandler (组件)  →  Tile 字段: 空（运行时填充）
 ```
 
 点击左上角的 **←** 返回按钮退出预制体编辑模式。

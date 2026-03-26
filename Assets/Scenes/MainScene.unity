@@ -572,8 +572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConfig: {fileID: 11400000, guid: 83ea9817334394d8f83ae8ca30404707, type: 2}
-  winScreen: {fileID: 77777771}
-  loseScreen: {fileID: 88888881}
+  winScreen: {fileID: 77777775}
+  loseScreen: {fileID: 88888885}
 --- !u!1 &77777771
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 77777772}
   - component: {fileID: 77777773}
   - component: {fileID: 77777774}
+  - component: {fileID: 77777775}
   m_Layer: 5
   m_Name: WinScreen
   m_TagString: Untagged
@@ -641,18 +642,30 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 0}
-    m_FontSize: 14
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 6
+    m_MaxSize: 64
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You Win!
+--- !u!114 &77777775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77777771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ae884fc11da47d99320314910f0921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88888881
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +677,7 @@ GameObject:
   - component: {fileID: 88888882}
   - component: {fileID: 88888883}
   - component: {fileID: 88888884}
+  - component: {fileID: 88888885}
   m_Layer: 5
   m_Name: LoseScreen
   m_TagString: Untagged
@@ -720,18 +734,30 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 0}
-    m_FontSize: 14
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 6
+    m_MaxSize: 64
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Time is up
+--- !u!114 &88888885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88888881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211312e6593fe4205bc3c87189ab1450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &103499198
 GameObject:
   m_ObjectHideFlags: 0
