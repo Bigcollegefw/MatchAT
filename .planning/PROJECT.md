@@ -12,20 +12,16 @@ A playable, functional Match-3 game that runs in Unity with minimal manual confi
 
 ### Validated
 
-(None yet — ship to validate)
-
-### Active
-
-- [ ] **Classic Match-3 Mechanics**: Swap adjacent tiles to match 3+ identical tiles in a row or column
-- [ ] **Cascade System**: After matches clear, tiles fall from above to fill gaps; new tiles spawn at top
-- [ ] **Chain Reaction**: Falling tiles that create new matches automatically trigger additional matches
-- [ ] **Scoring System**: Points awarded based on match size (3=100, 4=200, 5=500) with combo multipliers
-- [ ] **Time Limit**: Countdown timer (e.g., 60 seconds) — game ends when timer reaches zero
-- [ ] **Target Score Win Condition**: Player wins if score reaches target before time expires
-- [ ] **Win/Lose States**: Clear feedback for victory (score reached) and defeat (time expired)
-- [ ] **White-Box Visuals**: Unity built-in sprites with distinct colors for each tile type (6 colors)
-- [ ] **Grid System**: 8x8 tile grid as the playfield
-- [ ] **ScriptableTileConfig**: Centralized tile configuration for easy color/asset swapping
+- ✓ **Classic Match-3 Mechanics**: Swap adjacent tiles to match 3+ identical tiles — Phase 1
+- ✓ **Cascade System**: After matches clear, tiles fall from above to fill gaps; new tiles spawn at top — Phase 1
+- ✓ **Chain Reaction**: Falling tiles that create new matches automatically trigger additional matches — Phase 1
+- ✓ **Scoring System**: Points awarded based on match size (3=100, 4=200, 5=500) with combo multipliers — Phase 1
+- ✓ **Time Limit**: Countdown timer (60 seconds) — game ends when timer reaches zero — Phase 1
+- ✓ **Target Score Win Condition**: Player wins if score reaches target (5000) before time expires — Phase 1
+- ✓ **Win/Lose States**: Clear feedback for victory and defeat — Phase 1
+- ✓ **White-Box Visuals**: Unity built-in sprites with 6 distinct colors — Phase 1
+- ✓ **Grid System**: 8x8 tile grid as the playfield — Phase 1
+- ✓ **ScriptableTileConfig**: Centralized tile configuration — Phase 1
 
 ### Out of Scope
 
@@ -62,4 +58,4 @@ A playable, functional Match-3 game that runs in Unity with minimal manual confi
 
 ---
 
-*Last updated: 2026-03-26 after initialization*
+*Last updated: 2026-03-26 after Phase 1 completion*
