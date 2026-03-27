@@ -5,19 +5,32 @@ public class LoseScreen : MonoBehaviour
 {
     public Button restartButton;
 
+    private void Awake()
+    {
+        Debug.Log($"[LoseScreen] Awake() - name={gameObject.name}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+    }
+
     private void Start()
     {
+        Debug.Log($"[LoseScreen] Start() - name={gameObject.name}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
         gameObject.SetActive(false);
+        Debug.Log($"[LoseScreen] Start() - After SetActive(false), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
         if (restartButton != null)
         {
             restartButton.onClick.AddListener(OnRestartClicked);
+            Debug.Log("[LoseScreen] Restart button listener added");
+        }
+        else
+        {
+            Debug.LogWarning("[LoseScreen] restartButton is NULL!");
         }
     }
 
     public void Show()
     {
-        Debug.Log("[LoseScreen] Show() called!");
+        Debug.Log($"[LoseScreen] Show() called! name={gameObject.name}, activeSelf before={gameObject.activeSelf}");
         gameObject.SetActive(true);
+        Debug.Log($"[LoseScreen] Show() - After SetActive(true), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
     }
 
     public void Hide()
@@ -27,6 +40,7 @@ public class LoseScreen : MonoBehaviour
 
     private void OnRestartClicked()
     {
+        Debug.Log("[LoseScreen] Restart button clicked!");
         GameManager.Instance.RestartGame();
     }
 }
