@@ -15,14 +15,16 @@ public class TileInputHandler : MonoBehaviour, IPointerClickHandler, IBeginDragH
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        // Ignore click events that originated from a drag.
-        if (m_dragging) return;
+        // Ignore if game is not running or click was part of a drag.
+        if (!GameManager.IsGameRunning || m_dragging) return;
 
         HandleSelection();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!GameManager.IsGameRunning) return;
+
         m_dragStartPosition = eventData.pressPosition;
         m_dragging = false;
     }
@@ -38,7 +40,7 @@ public class TileInputHandler : MonoBehaviour, IPointerClickHandler, IBeginDragH
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!m_dragging) return;
+        if (!GameManager.IsGameRunning || !m_dragging) return;
 
         Vector2 delta = eventData.position - m_dragStartPosition;
         Tile neighbor = GetNeighborInDirection(delta);
@@ -76,6 +78,8 @@ public class TileInputHandler : MonoBehaviour, IPointerClickHandler, IBeginDragH
     /// <summary>Handles click-based two-tap selection and swap.</summary>
     private void HandleSelection()
     {
+        if (!GameManager.IsGameRunning) return;
+
         var gridManager = GridManager.Instance;
         if (gridManager == null || tile == null) return;
 

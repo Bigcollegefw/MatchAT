@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public bool IsGameRunning { get; private set; }
+    public static bool IsGameRunning { get; private set; }
     public bool HasWon { get; private set; }
 
     public GameConfig gameConfig;
