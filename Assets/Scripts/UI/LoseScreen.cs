@@ -16,6 +16,7 @@ public class LoseScreen : MonoBehaviour
 
     public void Show()
     {
+        Debug.Log("[LoseScreen] Show() called!");
         gameObject.SetActive(true);
     }
 

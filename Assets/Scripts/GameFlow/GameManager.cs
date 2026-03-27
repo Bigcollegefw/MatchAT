@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(bool won)
     {
+        Debug.Log($"[GameManager] EndGame({won}) called. loseScreen={loseScreen}");
         IsGameRunning = false;
         HasWon = won;
 
@@ -57,7 +58,15 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (loseScreen != null) loseScreen.Show();
+            if (loseScreen != null)
+            {
+                Debug.Log("[GameManager] Calling loseScreen.Show()");
+                loseScreen.Show();
+            }
+            else
+            {
+                Debug.LogError("[GameManager] loseScreen is NULL!");
+            }
         }
     }
 

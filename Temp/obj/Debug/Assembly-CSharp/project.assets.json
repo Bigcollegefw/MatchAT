@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {}
+    ".NETStandard,Version=v2.1": {
+      "Bezi.Editor/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Bezi.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bezi.Editor.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Bezi.Editor/1.0.0": {
+      "type": "project",
+      "path": "Bezi.Editor.csproj",
+      "msbuildProject": "Bezi.Editor.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": []
+    ".NETStandard,Version=v2.1": [
+      "Bezi.Editor >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/gun/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/gun/UnityProgram/MatchThree/Bezi.Editor.csproj": {
+              "projectPath": "/Users/gun/UnityProgram/MatchThree/Bezi.Editor.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

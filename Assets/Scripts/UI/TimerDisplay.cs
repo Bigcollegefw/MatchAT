@@ -11,6 +11,7 @@ public class TimerDisplay : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"[TimerDisplay] Start - gameDuration: {gameConfig?.gameDuration ?? -1}");
         timeRemaining = gameConfig.gameDuration;
     }
 
@@ -31,7 +32,15 @@ public class TimerDisplay : MonoBehaviour
 
             if (timeRemaining <= 0)
             {
-                GameManager.Instance.EndGame(false);
+                Debug.Log("[TimerDisplay] Time's up! Calling EndGame(false)");
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.EndGame(false);
+                }
+                else
+                {
+                    Debug.LogError("[TimerDisplay] GameManager.Instance is NULL!");
+                }
             }
         }
     }
