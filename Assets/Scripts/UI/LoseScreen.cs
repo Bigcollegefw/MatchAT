@@ -4,15 +4,17 @@ using UnityEngine.UI;
 public class LoseScreen : MonoBehaviour
 {
     public Button restartButton;
+    private int startCallCount = 0;
 
     private void Awake()
     {
-        Debug.Log($"[LoseScreen] Awake() - name={gameObject.name}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+        Debug.Log($"[LoseScreen] Awake() - name={gameObject.name}, instanceID={GetInstanceID()}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
     }
 
     private void Start()
     {
-        Debug.Log($"[LoseScreen] Start() - name={gameObject.name}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+        startCallCount++;
+        Debug.Log($"[LoseScreen] Start() #{startCallCount} - name={gameObject.name}, instanceID={GetInstanceID()}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
         gameObject.SetActive(false);
         Debug.Log($"[LoseScreen] Start() - After SetActive(false), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
         if (restartButton != null)
@@ -28,7 +30,7 @@ public class LoseScreen : MonoBehaviour
 
     public void Show()
     {
-        Debug.Log($"[LoseScreen] Show() called! name={gameObject.name}, activeSelf before={gameObject.activeSelf}");
+        Debug.Log($"[LoseScreen] Show() called! name={gameObject.name}, instanceID={GetInstanceID()}, activeSelf before={gameObject.activeSelf}");
         gameObject.SetActive(true);
         Debug.Log($"[LoseScreen] Show() - After SetActive(true), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
     }
