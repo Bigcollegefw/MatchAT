@@ -43,4 +43,10 @@ public class ScoreManager : MonoBehaviour
     {
         return CurrentScore >= TargetScore;
     }
+
+    public void ResetScore()
+    {
+        CurrentScore = 0;
+        UpdateDisplay();
+    }
 }

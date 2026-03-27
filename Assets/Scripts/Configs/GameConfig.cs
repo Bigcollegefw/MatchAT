@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameConfig", menuName = "MatchThree/GameConfig")]
 public class GameConfig : ScriptableObject
 {
-    public float gameDuration = 60f;
+    public float gameDuration = 30f;
     public int targetScore = 5000;
 
     public int pointsMatch3 = 100;

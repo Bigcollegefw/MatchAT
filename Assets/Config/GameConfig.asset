@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a11f5760f1fa4b1e9e309b26b6bf312, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  gameDuration: 60
+  gameDuration: 30
   targetScore: 5000
   pointsMatch3: 100
   pointsMatch4: 200

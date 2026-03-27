@@ -173,4 +173,13 @@ public class GridManager : MonoBehaviour
 
         isProcessing = false;
     }
+
+    public void ResetGrid()
+    {
+        foreach (Transform child in gridContainer)
+        {
+            Destroy(child.gameObject);
+        }
+        CreateGrid();
+    }
 }

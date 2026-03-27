@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
 
         if (winScreen != null) winScreen.Hide();
         if (loseScreen != null) loseScreen.Hide();
+
+        ScoreManager.Instance.ResetScore();
+        GridManager.Instance.ResetGrid();
     }
 
     public void CheckWinCondition()
@@ -56,5 +59,10 @@ public class GameManager : MonoBehaviour
         {
             if (loseScreen != null) loseScreen.Show();
         }
+    }
+
+    public void RestartGame()
+    {
+        StartGame();
     }
 }
