@@ -11,7 +11,12 @@ public class TimerDisplay : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"[TimerDisplay] Start - gameDuration: {gameConfig?.gameDuration ?? -1}");
+        ResetTimer();
+    }
+
+    public void ResetTimer()
+    {
+        Debug.Log($"[TimerDisplay] ResetTimer - gameDuration: {gameConfig?.gameDuration ?? -1}");
         timeRemaining = gameConfig.gameDuration;
     }
 

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameConfig gameConfig;
     public WinScreen winScreen;
     public LoseScreen loseScreen;
+    public TimerDisplay timerDisplay;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         ScoreManager.Instance.ResetScore();
         GridManager.Instance.ResetGrid();
+        if (timerDisplay != null) timerDisplay.ResetTimer();
     }
 
     public void CheckWinCondition()
