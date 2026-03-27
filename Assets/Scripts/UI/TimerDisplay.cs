@@ -16,7 +16,7 @@ public class TimerDisplay : MonoBehaviour
 
     void Update()
     {
-        if (gameManager != null && gameManager.IsGameRunning)
+        if (GameManager.IsGameRunning)
         {
             timeRemaining -= Time.deltaTime;
             timeRemaining = Mathf.Max(0, timeRemaining);
@@ -31,7 +31,7 @@ public class TimerDisplay : MonoBehaviour
 
             if (timeRemaining <= 0)
             {
-                gameManager.EndGame(false);
+                GameManager.Instance.EndGame(false);
             }
         }
     }
