@@ -4,43 +4,42 @@ using UnityEngine.UI;
 public class WinScreen : MonoBehaviour
 {
     public Button restartButton;
+    private bool gameEnded = false;
 
     private void Awake()
     {
-        Debug.Log($"[WinScreen] Awake() - name={gameObject.name}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+        Debug.Log($"[WinScreen] Awake()");
     }
 
     private void Start()
     {
-        Debug.Log($"[WinScreen] Start() - name={gameObject.name}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
-        gameObject.SetActive(false);
-        Debug.Log($"[WinScreen] Start() - After SetActive(false), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+        Debug.Log($"[WinScreen] Start() - gameEnded={gameEnded}");
+        if (!gameEnded)
+        {
+            gameObject.SetActive(false);
+        }
         if (restartButton != null)
         {
             restartButton.onClick.AddListener(OnRestartClicked);
-            Debug.Log("[WinScreen] Restart button listener added");
-        }
-        else
-        {
-            Debug.LogWarning("[WinScreen] restartButton is NULL!");
         }
     }
 
     public void Show()
     {
-        Debug.Log($"[WinScreen] Show() called! name={gameObject.name}, activeSelf before={gameObject.activeSelf}");
+        Debug.Log($"[WinScreen] Show() called!");
+        gameEnded = true;
         gameObject.SetActive(true);
-        Debug.Log($"[WinScreen] Show() - After SetActive(true), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
     }
 
     public void Hide()
     {
+        gameEnded = false;
         gameObject.SetActive(false);
     }
 
     private void OnRestartClicked()
     {
-        Debug.Log("[WinScreen] Restart button clicked!");
+        Debug.Log("[WinScreen] Restart clicked!");
         GameManager.Instance.RestartGame();
     }
 }

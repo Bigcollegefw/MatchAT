@@ -4,45 +4,42 @@ using UnityEngine.UI;
 public class LoseScreen : MonoBehaviour
 {
     public Button restartButton;
-    private int startCallCount = 0;
+    private bool gameEnded = false;
 
     private void Awake()
     {
-        Debug.Log($"[LoseScreen] Awake() - name={gameObject.name}, instanceID={GetInstanceID()}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+        Debug.Log($"[LoseScreen] Awake()");
     }
 
     private void Start()
     {
-        startCallCount++;
-        Debug.Log($"[LoseScreen] Start() #{startCallCount} - name={gameObject.name}, instanceID={GetInstanceID()}, activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
-        gameObject.SetActive(false);
-        Debug.Log($"[LoseScreen] Start() - After SetActive(false), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
+        Debug.Log($"[LoseScreen] Start() - gameEnded={gameEnded}");
+        if (!gameEnded)
+        {
+            gameObject.SetActive(false);
+        }
         if (restartButton != null)
         {
             restartButton.onClick.AddListener(OnRestartClicked);
-            Debug.Log("[LoseScreen] Restart button listener added");
-        }
-        else
-        {
-            Debug.LogWarning("[LoseScreen] restartButton is NULL!");
         }
     }
 
     public void Show()
     {
-        Debug.Log($"[LoseScreen] Show() called! name={gameObject.name}, instanceID={GetInstanceID()}, activeSelf before={gameObject.activeSelf}");
+        Debug.Log($"[LoseScreen] Show() called!");
+        gameEnded = true;
         gameObject.SetActive(true);
-        Debug.Log($"[LoseScreen] Show() - After SetActive(true), activeInHierarchy={gameObject.activeInHierarchy}, activeSelf={gameObject.activeSelf}");
     }
 
     public void Hide()
     {
+        gameEnded = false;
         gameObject.SetActive(false);
     }
 
     private void OnRestartClicked()
     {
-        Debug.Log("[LoseScreen] Restart button clicked!");
+        Debug.Log("[LoseScreen] Restart clicked!");
         GameManager.Instance.RestartGame();
     }
 }
