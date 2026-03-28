@@ -8,7 +8,7 @@
 |------|------|----------|
 | **Claude Code** | AI 编程助手，代码生成、调试、重构 | CLI + VSCode Extension |
 | **GSD (Get Shit Done)** | 项目管理框架，需求→验证闭环 | Claude Code Skill (`/gsd:quick`, `/gsd:plan-phase`, `/gsd:execute-phase`) |
-| **Bezi** | 场景编辑与可视化预览 | Unity Package (`com.bezi.explorer`) |
+| **Bezi** | 游戏开发 AI 助手，原型设计、调试、自动化 | Unity 深度集成，项目感知 |
 | **Unity** | 游戏引擎，运行时环境 | 本地安装 |
 
 ## 工作流架构
@@ -33,10 +33,10 @@
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Unity + Bezi                               │
+│                    Unity + Bezi AI                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
-│  │   Assets/    │  │ ProjectSettings│ │    Bezi IDE     │  │
-│  │   脚本/配置   │  │   场景配置    │  │   场景可视化    │  │
+│  │   Assets/    │  │ ProjectSettings│ │   Bezi AI       │  │
+│  │   脚本/配置   │  │   场景配置    │  │  项目感知助手   │  │
 │  └──────────────┘  └──────────────┘  └──────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -149,14 +149,23 @@ Assets/
 | `TimerDisplay` | 倒计时显示 | GameConfig, GameManager |
 | `WinScreen/LoseScreen` | 结束界面显示 | Button.onClick |
 
-## Bezi 集成
+## Bezi AI 集成
+
+### Bezi 是什么
+
+Bezi 是一个专为游戏开发设计的 **AI 助手**，具有以下特点：
+
+- **项目感知**：理解当前项目上下文，能够进行针对性辅助
+- **Unity 深度集成**：直接与 Unity 编辑器协同工作
+- **自动化任务**：帮助原型设计、调试、自动化重复性工作
+- **支持个人开发者和工作室**：提升开发效率，允许更多创意探索
 
 ### 工作流程
 
-1. **场景编辑** → 在 Bezi 中设计场景布局
-2. **导出配置** → Bezi 生成 Unity 可识别的场景数据
-3. **自动映射** → `Bezi.Explorer` Package 读取配置到 Unity
-4. **运行时控制** → 脚本读取 Bezi 导出参数
+1. **需求沟通** → 向 Bezi 描述游戏功能或设计目标
+2. **原型生成** → Bezi 帮助快速创建游戏原型
+3. **调试优化** → Bezi 协助定位和修复问题
+4. **自动化** → Bezi 处理重复性开发任务
 
 ### 当前项目 Bezi 配置
 
@@ -264,7 +273,7 @@ Debug.LogError($"[ClassName] ErrorDescription");
 |------|------|------|
 | Unity | 2022.3.x | LTS 版本 |
 | Claude Code | Latest | 通过 npm 更新 |
-| Bezi Explorer | Latest | Unity Package |
+| Bezi AI | Latest | 游戏开发 AI 助手 |
 
 ---
 
