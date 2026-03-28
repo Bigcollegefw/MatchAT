@@ -2,7 +2,7 @@
 
 > 本文档记录 MatchThree 项目的 AI 辅助开发工作流规范，适用于个人项目开发。
 
-![Game Demo](Assets/Video/matchTUnity.gif)
+
 
 ## 核心技术栈
 
@@ -137,6 +137,8 @@ Assets/
 | `TimerDisplay` | 倒计时显示 | GameConfig, GameManager |
 | `WinScreen/LoseScreen` | 结束界面显示 | Button.onClick |
 
+![Game Demo](Assets/Video/matchTUnity.gif)
+
 ## Bezi AI 集成
 
 ### Bezi 是什么
@@ -179,5 +181,6 @@ Bezi 是一个专为游戏开发设计的 **AI 助手**，具有以下特点：
 3. 按需重建工作状态
 
 ---
+优化美术资源后的版本：
 
-*本文档由 AI 辅助生成，最后更新：2026-03-28*
+![Game Demo](Assets/Video/matchArt.gif)
