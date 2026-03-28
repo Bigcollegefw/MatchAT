@@ -2,6 +2,8 @@
 
 > 本文档记录 MatchThree 项目的 AI 辅助开发工作流规范，适用于个人项目开发。
 
+![Game Demo](Assets/Video/matchTUnity.gif)
+
 ## 核心技术栈
 
 | 工具 | 用途 | 集成方式 |
@@ -100,20 +102,6 @@ Assets/
 └── Scenes/             # 场景文件
 ```
 
-**命名规范：**
-
-| 类型 | 规范 | 示例 |
-|------|------|------|
-| 脚本类 | PascalCase | `GridManager.cs` |
-| 配置类 | PascalCase + Config | `GameConfig.cs` |
-| 配置文件 | PascalCase + Config.asset | `GameConfig.asset` |
-| 预制体 | PascalCase | `Tile.prefab` |
-| 场景 | PascalCase | `MainScene.unity` |
-| 公开字段 | camelCase | `gameConfig` |
-| 私有字段 | _camelCase (下划线前缀) | `_timeRemaining` |
-| 静态变量 | s_CamelCase | `s_FirstSelected` |
-| 常量 | k_CamelCase | `k_Match3Score` |
-
 ### 代码分层
 
 ```
@@ -189,91 +177,6 @@ Bezi 是一个专为游戏开发设计的 **AI 助手**，具有以下特点：
 1. 读取 `CLAUDE.md` 获取项目上下文
 2. 读取 `STATE.md` 获取当前进度
 3. 按需重建工作状态
-
-## 版本控制策略
-
-### Git 分支
-
-```
-main          # 稳定版本
-├── develop   # 开发分支（可选）
-└── feature/* # 功能分支（大型项目）
-```
-
-### 提交规范
-
-```
-<type>: <subject>
-
-<body (optional)>
-
-<footer (optional)>
-```
-
-**Type 类型：**
-- `feat`: 新功能
-- `fix`: Bug 修复
-- `docs`: 文档更新
-- `refactor`: 重构
-- `chore`: 构建/工具变更
-- `perf`: 性能优化
-
-### .gitignore 规范
-
-```
-# Unity 生成（可重建）
-/Library/
-/Temp/
-/Logs/
-UserSettings/
-
-# IDE
-.vscode/
-.idea/
-
-# 构建产物
-*.apk
-*.unitypackage
-
-# 内存转储
-mono_crash*.blob
-```
-
-**必须保留：**
-- `Assets/` - 源代码、资源
-- `Packages/` - 依赖配置
-- `ProjectSettings/` - 项目设置
-
-## 质量保证
-
-### 验证清单
-
-每个阶段完成后验证：
-- [ ] 所有编译错误已修复
-- [ ] 游戏可正常运行（无运行时错误）
-- [ ] 核心功能通过手动测试
-- [ ] 代码符合命名规范
-- [ ] 无硬编码魔法值
-- [ ] 所有引用已配置（非 null）
-
-### 调试日志规范
-
-```csharp
-Debug.Log($"[ClassName] MethodName() - condition: {value}");
-Debug.LogError($"[ClassName] ErrorDescription");
-```
-
-日志格式：`[组件名] 方法名 - 状态信息`
-
-## 工具链版本
-
-记录当前使用的工具版本，便于复现：
-
-| 工具 | 版本 | 说明 |
-|------|------|------|
-| Unity | 2022.3.x | LTS 版本 |
-| Claude Code | Latest | 通过 npm 更新 |
-| Bezi AI | Latest | 游戏开发 AI 助手 |
 
 ---
 
