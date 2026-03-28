@@ -183,4 +183,4 @@ Bezi 是一个专为游戏开发设计的 **AI 助手**，具有以下特点：
 ---
 优化美术资源后的版本：
 
-![Game Demo](Assets/Video/matchArt.gif)
+![Game Demo](Assets/Video/MatchArt.gif)
